@@ -13,7 +13,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 )
 
-// Ensure ScaffoldingProvider satisfies various provider interfaces.
+// Ensure GodotenvProvider satisfies various provider interfaces.
 var _ provider.Provider = &GodotenvProvider{}
 var _ provider.ProviderWithFunctions = &GodotenvProvider{}
 
@@ -34,6 +34,7 @@ func (p *GodotenvProvider) Metadata(ctx context.Context, req provider.MetadataRe
 func (p *GodotenvProvider) Schema(ctx context.Context, req provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
 		MarkdownDescription: "Unmarshal .env files into Terraform using [godotenv](https://github.com/joho/godotenv) - A Go port of Ruby's dotenv library.",
+		Attributes:          map[string]schema.Attribute{},
 	}
 }
 

@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 terraform {
   required_providers {
     godotenv = {
@@ -9,6 +7,7 @@ terraform {
   }
 }
 
-output "yaml" {
-  value = yamlencode(provider::godotenv::read("${path.root}/base.env", "production.env"))
+output "env_map" {
+  # Read the contents of a .env file and unmarshal into a map
+  value = provider::godotenv::read("${path.root}/.env")
 }
