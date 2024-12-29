@@ -1,7 +1,7 @@
 terraform {
   required_providers {
-    godotenv = {
-      source  = "briceburg/godotenv"
+    go-dotenv = {
+      source  = "briceburg/go-dotenv"
       version = "~> 0.0.0"
     }
   }
