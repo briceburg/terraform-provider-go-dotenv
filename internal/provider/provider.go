@@ -33,8 +33,15 @@ func (p *GodotenvProvider) Metadata(ctx context.Context, req provider.MetadataRe
 
 func (p *GodotenvProvider) Schema(ctx context.Context, req provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
-		MarkdownDescription: "Unmarshal .env files into Terraform using [godotenv](https://github.com/joho/godotenv) - A Go port of Ruby's dotenv library.",
-		Attributes:          map[string]schema.Attribute{},
+		MarkdownDescription: `Unmarshal .env files into Terraform using [godotenv](https://github.com/joho/godotenv) - A Go port of Ruby's dotenv library.
+
+Say yes to parsing of diverse ` + "`.env`" + `formats including;
+
+* unquoted values
+* multiline values
+* comments
+* export declarations`,
+		Attributes: map[string]schema.Attribute{},
 	}
 }
 
